@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mobile/views/SignUpView.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -76,6 +77,11 @@ class _LoginViewState extends State<LoginView> {
                   child: GestureDetector(
                       onTap: () {
                         print("Redirecionar para criar conta");
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const SignUpView(),
+                          ),
+                        );
                       },
                       child: Center(
                         child: Row(

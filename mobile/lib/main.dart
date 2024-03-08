@@ -38,6 +38,9 @@ class _MyMoneyState extends State<MyMoney> {
             fontWeight: FontWeight.w300,
             fontSize: 20,
           ),
+          iconTheme: IconThemeData(
+            color: Colors.black, //change your color here
+          ),
         ),
         textTheme: TextTheme(
           titleLarge: GoogleFonts.poppins(),
