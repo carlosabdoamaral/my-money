@@ -33,13 +33,15 @@ class _MyMoneyState extends State<MyMoney> {
         scaffoldBackgroundColor: Color.fromARGB(255, 255, 255, 255),
         appBarTheme: AppBarTheme(
           foregroundColor: green,
+          centerTitle: true,
           backgroundColor: Colors.transparent,
           titleTextStyle: GoogleFonts.poppins(
             fontWeight: FontWeight.w300,
             fontSize: 20,
+            color: green,
           ),
           iconTheme: const IconThemeData(
-            color: Colors.black, //change your color here
+            color: green, //change your color here
           ),
         ),
         textTheme: TextTheme(

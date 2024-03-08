@@ -1,6 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile/common/colors.dart';
+import 'package:mobile/views/LoginView.dart';
+import 'package:mobile/views/ProfileView.dart';
+import 'package:mobile/views/TransactionsListView.dart';
 import 'package:mobile/widgets/DashboardAmountWidget.dart';
 import 'package:mobile/widgets/TransactionRowWidget.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -31,27 +36,44 @@ class _DashboardViewState extends State<DashboardView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: false,
         title: Text(
           "Dashboard",
           style: GoogleFonts.poppins(
             color: green,
           ),
         ),
-        leading: const Icon(
-          Icons.person,
-          color: green,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const ProfileView(),
+              ),
+            );
+          },
+          child: const Icon(
+            Icons.person,
+            color: green,
+          ),
         ),
         actions: [
           Container(
             margin: const EdgeInsets.only(
               right: 20,
             ),
-            child: const Row(
+            child: Row(
               children: [
-                Icon(
-                  Icons.logout,
-                  color: green,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const LoginView(),
+                      ),
+                    );
+                  },
+                  child: const Icon(
+                    Icons.logout,
+                    color: green,
+                  ),
                 ),
               ],
             ),
@@ -142,18 +164,27 @@ class _DashboardViewState extends State<DashboardView> {
                 const SizedBox(height: 10),
                 for (var i in [0, 1, 2]) TransactionRowWidget(),
                 const SizedBox(height: 5),
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: green,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Text(
-                    "Histórico completo",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.poppins(
-                      color: Colors.white,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const TransactionsListView(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: green,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text(
+                      "Histórico completo",
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.poppins(
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 )
