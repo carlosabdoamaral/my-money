@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mobile/common/colors.dart';
+import 'package:mobile/views/DashboardView.dart';
 import 'package:mobile/views/SignUpView.dart';
 
 class LoginView extends StatefulWidget {
@@ -27,7 +29,7 @@ class _LoginViewState extends State<LoginView> {
                   style: GoogleFonts.poppins(
                     fontSize: 15,
                     fontWeight: FontWeight.w300,
-                    color: Colors.green,
+                    color: green,
                   ),
                 ),
                 Text(
@@ -35,7 +37,7 @@ class _LoginViewState extends State<LoginView> {
                   style: GoogleFonts.poppins(
                     fontSize: 25,
                     fontWeight: FontWeight.w500,
-                    color: Colors.green,
+                    color: green,
                   ),
                 ),
                 const SizedBox(height: 40),
@@ -52,12 +54,18 @@ class _LoginViewState extends State<LoginView> {
                 ),
                 const SizedBox(height: 10),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) => const DashboardView(),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: double.infinity,
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                      color: Colors.green,
+                      color: green,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Text(
@@ -88,7 +96,7 @@ class _LoginViewState extends State<LoginView> {
                           children: [
                             Icon(
                               Icons.add_box,
-                              color: Colors.green,
+                              color: green,
                             ),
                             Text(
                               'Criar conta no ',

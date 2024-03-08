@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mobile/common/colors.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({super.key});
@@ -13,9 +14,9 @@ class _SignUpViewState extends State<SignUpView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        foregroundColor: Colors.green,
+        foregroundColor: green,
         iconTheme: const IconThemeData(
-          color: Colors.green,
+          color: green,
         ),
       ),
       body: SafeArea(
@@ -30,7 +31,7 @@ class _SignUpViewState extends State<SignUpView> {
                   style: GoogleFonts.poppins(
                     fontSize: 15,
                     fontWeight: FontWeight.w300,
-                    color: Colors.green,
+                    color: green,
                   ),
                 ),
                 Text(
@@ -38,7 +39,7 @@ class _SignUpViewState extends State<SignUpView> {
                   style: GoogleFonts.poppins(
                     fontSize: 25,
                     fontWeight: FontWeight.w500,
-                    color: Colors.green,
+                    color: green,
                   ),
                 ),
                 const SizedBox(height: 40),
@@ -72,7 +73,7 @@ class _SignUpViewState extends State<SignUpView> {
                     width: double.infinity,
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                      color: Colors.green,
+                      color: green,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Text(

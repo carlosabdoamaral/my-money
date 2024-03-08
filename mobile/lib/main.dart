@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mobile/views/DashboardView.dart';
+import 'package:mobile/common/colors.dart';
 import 'package:mobile/views/LoginView.dart';
 
 void main() {
@@ -30,15 +30,15 @@ class _MyMoneyState extends State<MyMoney> {
             ),
           ),
         ),
-        scaffoldBackgroundColor: Colors.white,
+        scaffoldBackgroundColor: Color.fromARGB(255, 255, 255, 255),
         appBarTheme: AppBarTheme(
-          foregroundColor: Colors.green,
+          foregroundColor: green,
           backgroundColor: Colors.transparent,
           titleTextStyle: GoogleFonts.poppins(
             fontWeight: FontWeight.w300,
             fontSize: 20,
           ),
-          iconTheme: IconThemeData(
+          iconTheme: const IconThemeData(
             color: Colors.black, //change your color here
           ),
         ),
