@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile/common/colors.dart';
-import 'package:mobile/views/LoginView.dart';
+import 'package:mobile/views/signin_view.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -9,7 +9,7 @@ void main() {
 }
 
 class MyMoney extends StatefulWidget {
-  const MyMoney({Key? key}) : super(key: key);
+  const MyMoney({super.key});
 
   @override
   State<MyMoney> createState() => _MyMoneyState();
@@ -30,7 +30,7 @@ class _MyMoneyState extends State<MyMoney> {
             ),
           ),
         ),
-        scaffoldBackgroundColor: Color.fromARGB(255, 255, 255, 255),
+        scaffoldBackgroundColor: const Color.fromARGB(255, 255, 255, 255),
         appBarTheme: AppBarTheme(
           foregroundColor: green,
           centerTitle: true,
@@ -48,7 +48,7 @@ class _MyMoneyState extends State<MyMoney> {
           titleLarge: GoogleFonts.poppins(),
         ),
       ),
-      home: const LoginView(),
+      home: const SignInView(),
     );
   }
 }

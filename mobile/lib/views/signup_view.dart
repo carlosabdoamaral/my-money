@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile/common/colors.dart';
+import 'package:mobile/views/dashboard_view.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({super.key});
@@ -43,32 +44,38 @@ class _SignUpViewState extends State<SignUpView> {
                   ),
                 ),
                 const SizedBox(height: 40),
-                TextField(
+                const TextField(
                   decoration: InputDecoration(
                     hintText: 'Nome completo',
                   ),
                 ),
                 const SizedBox(height: 10),
-                TextField(
+                const TextField(
                   decoration: InputDecoration(
                     hintText: 'E-mail',
                   ),
                 ),
                 const SizedBox(height: 10),
-                TextField(
+                const TextField(
                   decoration: InputDecoration(
                     hintText: 'Senha',
                   ),
                 ),
                 const SizedBox(height: 10),
-                TextField(
+                const TextField(
                   decoration: InputDecoration(
                     hintText: 'Confirme a senha',
                   ),
                 ),
                 const SizedBox(height: 10),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) => const DashboardView(),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: double.infinity,
                     padding: const EdgeInsets.all(10),

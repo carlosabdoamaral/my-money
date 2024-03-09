@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile/common/colors.dart';
 
@@ -19,14 +19,14 @@ class DashboardAmountWidget extends StatefulWidget {
   Color color = green;
 
   @override
-  State<DashboardAmountWidget> createState() => Dashboard_AmountWidgetState();
+  State<DashboardAmountWidget> createState() => DashboardAmountWidgetState();
 }
 
-class Dashboard_AmountWidgetState extends State<DashboardAmountWidget> {
+class DashboardAmountWidgetState extends State<DashboardAmountWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: widget.color,
         borderRadius: BorderRadius.circular(10),

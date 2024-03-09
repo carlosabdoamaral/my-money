@@ -1,19 +1,17 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile/common/colors.dart';
-import 'package:mobile/views/DashboardView.dart';
-import 'package:mobile/views/SignUpView.dart';
+import 'package:mobile/views/dashboard_view.dart';
+import 'package:mobile/views/signup_view.dart';
 
-class LoginView extends StatefulWidget {
-  const LoginView({super.key});
+class SignInView extends StatefulWidget {
+  const SignInView({super.key});
 
   @override
-  State<LoginView> createState() => _LoginViewState();
+  State<SignInView> createState() => _SignInViewState();
 }
 
-class _LoginViewState extends State<LoginView> {
+class _SignInViewState extends State<SignInView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,13 +39,13 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ),
                 const SizedBox(height: 40),
-                TextField(
+                const TextField(
                   decoration: InputDecoration(
                     hintText: 'Login',
                   ),
                 ),
                 const SizedBox(height: 10),
-                TextField(
+                const TextField(
                   decoration: InputDecoration(
                     hintText: 'Senha',
                   ),
@@ -84,7 +82,6 @@ class _LoginViewState extends State<LoginView> {
                   width: double.infinity,
                   child: GestureDetector(
                       onTap: () {
-                        print("Redirecionar para criar conta");
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (context) => const SignUpView(),
@@ -94,7 +91,7 @@ class _LoginViewState extends State<LoginView> {
                       child: Center(
                         child: Row(
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.add_box,
                               color: green,
                             ),

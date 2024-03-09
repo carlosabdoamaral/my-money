@@ -1,13 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile/common/colors.dart';
-import 'package:mobile/views/LoginView.dart';
-import 'package:mobile/views/ProfileView.dart';
-import 'package:mobile/views/TransactionsListView.dart';
-import 'package:mobile/widgets/DashboardAmountWidget.dart';
-import 'package:mobile/widgets/TransactionRowWidget.dart';
+import 'package:mobile/views/signin_view.dart';
+import 'package:mobile/views/profile_view.dart';
+import 'package:mobile/views/transaction_list_view.dart';
+import 'package:mobile/widgets/add_transaction_modal.dart';
+import 'package:mobile/widgets/dashboard_amount_widget.dart';
+import 'package:mobile/widgets/transaction_row_widget.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class SalesData {
@@ -66,7 +65,7 @@ class _DashboardViewState extends State<DashboardView> {
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => const LoginView(),
+                        builder: (context) => const SignInView(),
                       ),
                     );
                   },
@@ -84,7 +83,7 @@ class _DashboardViewState extends State<DashboardView> {
         child: SingleChildScrollView(
           physics: const AlwaysScrollableScrollPhysics(),
           child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 20),
+            margin: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
                 Row(
@@ -126,7 +125,7 @@ class _DashboardViewState extends State<DashboardView> {
                 const SizedBox(height: 10),
                 Container(
                   height: MediaQuery.of(context).size.height * 0.3,
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     color: Colors.black.withOpacity(0.02),
                     borderRadius: BorderRadius.circular(10),
@@ -162,7 +161,7 @@ class _DashboardViewState extends State<DashboardView> {
                   ],
                 ),
                 const SizedBox(height: 10),
-                for (var i in [0, 1, 2]) TransactionRowWidget(),
+                for (var _ in [0, 1, 2]) const TransactionRowWidget(),
                 const SizedBox(height: 5),
                 GestureDetector(
                   onTap: () {
@@ -190,6 +189,28 @@ class _DashboardViewState extends State<DashboardView> {
                 )
               ],
             ),
+          ),
+        ),
+      ),
+      floatingActionButton: GestureDetector(
+        onTap: () {
+          showModalBottomSheet(
+            context: context,
+            builder: (BuildContext context) {
+              return const AddTransactionModal();
+            },
+          );
+        },
+        child: Container(
+          width: 60,
+          height: 60,
+          decoration: BoxDecoration(
+            color: green,
+            borderRadius: BorderRadius.circular(30),
+          ),
+          child: const Icon(
+            Icons.add,
+            color: Colors.white,
           ),
         ),
       ),
